@@ -1,0 +1,47 @@
+# Supermarket Management System
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermarket Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Supermarket Management System</h1>
+        <form id="transactionForm">
+            <label for="phoneNumber">Enter Your Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required>
+
+            <label for="amount">Enter Amount</label>
+            <input type="text" id="amount" name="amount" required>
+
+            <label for="pin">Enter Your PIN:</label>
+            <input type="password" id="pin" name="pin" required>
+
+            <button type="submit">Proceed with Transaction</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('transactionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const pin = document.getElementById('pin').value;
+
+            // Simulate transaction processing
+            if (phoneNumber && pin) {
+                document.getElementById('message').innerText = 'Transaction Successful! Amount deducted from M-Pesa account to HighRon supermarket.';
+            } else {
+                document.getElementById('message').innerText = 'Transaction Failed! Please check your details.';
+            }
+        });
+    </script>
+</body>
+
+</html>
